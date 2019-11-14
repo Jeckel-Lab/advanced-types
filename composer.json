@@ -1,0 +1,14 @@
+{
+    "name": "jeckel-lab/advanced-types",
+    "description": "Advanced PHP types for DDD projects",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julien Mercier-Rojas",
+            "email": "julien@jeckel-lab.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
