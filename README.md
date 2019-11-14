@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/Jeckel-Lab/advanced-types.svg?style=svg)](https://circleci.com/gh/Jeckel-Lab/advanced-types)
+[![CircleCI](https://circleci.com/gh/Jeckel-Lab/advanced-types.svg?style=svg)](https://circleci.com/gh/Jeckel-Lab/advanced-types) [![Latest Stable Version](https://poser.pugx.org/jeckel-lab/advanced-types/v/stable)](https://packagist.org/packages/jeckel-lab/advanced-types) [![Total Downloads](https://poser.pugx.org/jeckel-lab/advanced-types/downloads)](https://packagist.org/packages/jeckel-lab/advanced-types)
 
 # Advanced PHP Types
 
