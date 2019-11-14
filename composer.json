@@ -10,5 +10,12 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "marc-mabe/php-enum": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeckelLab\\Types\\": "src/"
+        }
+    }
 }
