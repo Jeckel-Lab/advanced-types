@@ -11,6 +11,7 @@ use Throwable;
 
 /**
  * Interface TypeException
+ * @package JeckelLab\Types
  */
 interface TypeException extends Throwable
 {

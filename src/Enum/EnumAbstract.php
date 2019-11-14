@@ -1,0 +1,30 @@
+<?php
+declare(strict_types=1);
+/**
+ * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
+ * Created at : 14/11/2019
+ */
+
+namespace JeckelLab\Types\Enum;
+
+use JsonSerializable;
+use MabeEnum\Enum;
+
+/**
+ * Class EnumAbstract
+ * @package JeckelLab\Types\Enum
+ */
+abstract class EnumAbstract extends Enum implements JsonSerializable
+{
+    /**
+     * Specify data which should be serialized to JSON
+     * @link https://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return $this->getValue();
+    }
+}
