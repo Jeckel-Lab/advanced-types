@@ -10,7 +10,6 @@ namespace JeckelLab\Types\Collection;
 use JeckelLab\Types\Collection\Exception\InvalidTypeException;
 use JeckelLab\Types\Collection\Exception\OutOfRangeException;
 use ArrayIterator;
-use stdClass;
 
 /**
  * Class CollectionAbstract
@@ -73,9 +72,9 @@ abstract class CollectionAbstract implements CollectionInterface
 
     /**
      * @param int|null $index
-     * @param stdClass $item
+     * @param object   $item
      */
-    public function setItem(?int $index, stdClass $item): void
+    public function setItem(?int $index, $item): void
     {
         if (! $item instanceof $this->itemClassName) {
             throw new InvalidTypeException(sprintf(
