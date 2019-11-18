@@ -43,11 +43,17 @@ class TimeDuration
         if (null === $format) {
             $format = $this->getOptimalFormat();
         }
-        $pattern = ['/%h/', '/%m/', '/%s/'];
+        $pattern = ['/%h/', '/%m/', '/%s/', '/%M/', '/%S/'];
+        $hours = floor($this->duration / 3600);
+        $minutes = floor(($this->duration % 3600) / 60);
+        $seconds = $this->duration % 60;
+
         $values  = [
-            floor($this->duration / 3600),
-            floor(($this->duration % 3600) / 60),
-            floor($this->duration % 60)
+            $hours,
+            $minutes,
+            $seconds,
+            sprintf('%02d', $minutes),
+            sprintf('%02d', $seconds)
         ];
 
         return preg_replace($pattern, $values, $format);
@@ -59,10 +65,10 @@ class TimeDuration
     protected function getOptimalFormat(): string
     {
         if ($this->duration > 3600) {
-            return '%h:%m:%s';
+            return '%h:%M:%S';
         }
         if ($this->duration > 60) {
-            return '%m:%s';
+            return '%m:%S';
         }
         return '%s';
     }
