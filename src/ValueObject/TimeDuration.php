@@ -43,7 +43,7 @@ class TimeDuration
         if (null === $format) {
             $format = $this->getOptimalFormat();
         }
-        $pattern = ['%h', '%m', '%s'];
+        $pattern = ['/%h/', '/%m/', '/%s/'];
         $values  = [
             floor($this->duration / 3600),
             floor(($this->duration % 3600) / 60),
