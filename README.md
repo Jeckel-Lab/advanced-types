@@ -47,3 +47,44 @@ class Clients extends CollectionAbstract
     }
 }
 ```
+
+
+# Value Object
+
+## Usage with doctrine
+
+Configure type DBAL:
+
+```yaml
+# config/packages/doctrine.yaml
+
+doctrine:
+    dbal:
+        types:
+            time_duration: JeckelLab\Types\Doctrine\Type\TimeDurationType
+```
+
+Use it in your entity:
+
+```php
+<?php
+
+use Doctrine\ORM\Mapping as ORM;
+use JeckelLab\Types\ValueObject\TimeDuration;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\TimeEntryRepository")
+ */
+class TimeEntry
+{
+    // ...
+
+    /**
+     * @ORM\Column(type="time_duration", nullable=true)
+     * @var TimeDuration|null
+     */
+    private $duration;
+
+    // ...
+}
+```
