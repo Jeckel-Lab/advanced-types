@@ -7,6 +7,8 @@ declare(strict_types=1);
 
 namespace JeckelLab\Types\ValueObject;
 
+use RuntimeException;
+
 /**
  * Class TimeDuration
  */
@@ -37,6 +39,7 @@ class TimeDuration
     /**
      * @param string|null $format
      * @return string
+     * @throw RuntimeException
      */
     public function format(?string $format = null): string
     {
@@ -56,7 +59,11 @@ class TimeDuration
             sprintf('%02d', $seconds)
         ];
 
-        return preg_replace($pattern, $values, $format);
+        $result = preg_replace($pattern, $values, $format);
+        if (is_string($result)) {
+            return $result;
+        }
+        throw new RuntimeException('Invalid format for time duration '.$format);
     }
 
     /**
