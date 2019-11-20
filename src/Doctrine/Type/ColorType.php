@@ -53,13 +53,13 @@ class ColorType extends Type
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return int|null
+     * @return string|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?int
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof Color) {
-            return $value->getValue();
+            return $value->getHex();
         }
         return null;
     }
