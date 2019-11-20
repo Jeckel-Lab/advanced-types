@@ -7,13 +7,13 @@ declare(strict_types=1);
 
 namespace JeckelLab\Types\ValueObject\Exception;
 
-use throwable;
+use Throwable;
 
 /**
  * Interface ValueObjectExceptionInterface
  * @package ValueObject\Exception
  */
-interface ValueObjectExceptionInterface extends throwable
+interface ValueObjectExceptionInterface extends Throwable
 {
 
 }
