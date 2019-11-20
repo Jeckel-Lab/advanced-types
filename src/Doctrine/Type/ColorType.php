@@ -41,12 +41,15 @@ class ColorType extends Type
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return Color
+     * @return Color|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function convertToPHPValue($value, AbstractPlatform $platform): Color
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?Color
     {
+        if (null === $value) {
+            return null;
+        }
         return Color::byHex($value);
     }
 

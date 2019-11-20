@@ -41,12 +41,15 @@ class TimeDurationType extends Type
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return TimeDuration
+     * @return TimeDuration|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function convertToPHPValue($value, AbstractPlatform $platform): TimeDuration
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?TimeDuration
     {
+        if (null === $value) {
+            return null;
+        }
         return new TimeDuration((int) $value);
     }
 
