@@ -17,7 +17,7 @@ use JeckelLab\Types\ValueObject\TimeDuration;
  */
 class TimeDurationType extends Type
 {
-    protected const TIME_DURATION_TYPE = 'time_duration_type';
+    protected const TIME_DURATION_TYPE = 'time_duration';
 
     /**
      * @param array            $fieldDeclaration

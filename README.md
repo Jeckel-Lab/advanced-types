@@ -62,6 +62,7 @@ doctrine:
     dbal:
         types:
             time_duration: JeckelLab\Types\Doctrine\Type\TimeDurationType
+            color: JeckelLab\Types\Doctrine\Type\ColorType
 ```
 
 Use it in your entity:

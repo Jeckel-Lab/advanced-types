@@ -17,7 +17,7 @@ use JeckelLab\Types\ValueObject\Color;
  */
 class ColorType extends Type
 {
-    protected const COLOR_TYPE = 'color_type';
+    protected const COLOR_TYPE = 'color';
 
     /**
      * @param array            $fieldDeclaration
