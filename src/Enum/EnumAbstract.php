@@ -27,4 +27,16 @@ abstract class EnumAbstract extends Enum implements JsonSerializable
     {
         return $this->getValue();
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        $value = $this->getValue();
+        if (is_string($value)) {
+            return $value;
+        }
+        return parent::__toString();
+    }
 }

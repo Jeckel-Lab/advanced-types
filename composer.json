@@ -12,6 +12,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^7.1",
+        "ext-json": "*",
         "marc-mabe/php-enum": "^4.1"
     },
     "autoload": {
