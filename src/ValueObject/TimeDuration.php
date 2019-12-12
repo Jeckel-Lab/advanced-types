@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace JeckelLab\Types\ValueObject;
 
+use Cassandra\Duration;
 use RuntimeException;
 
 /**
@@ -78,6 +79,26 @@ class TimeDuration
             return '%m:%S';
         }
         return '%s';
+    }
+
+    /**
+     * @param int $duration
+     * @return $this
+     */
+    public function add(int $duration): self
+    {
+        $this->duration += $duration;
+        return $this;
+    }
+
+    /**
+     * @param TimeDuration $duration
+     * @return $this
+     */
+    public function addDuration(TimeDuration $duration): self
+    {
+        $this->add($duration->getValue());
+        return $this;
     }
 
     /**
