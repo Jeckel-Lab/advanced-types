@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created at : 14/11/2019
  */
 
-namespace JeckelLab\Types\Collection;
+namespace JeckelLab\AdvancedTypes\Collection;
 
 use ArrayAccess;
 use Countable;
@@ -13,7 +13,7 @@ use IteratorAggregate;
 
 /**
  * Interface CollectionInterface
- * @package JeckelLab\Types\Collection
+ * @package JeckelLab\AdvancedTypes\Collection
  */
 interface CollectionInterface extends Countable, IteratorAggregate, ArrayAccess
 {

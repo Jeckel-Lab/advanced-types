@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created at : 20/11/2019
  */
 
-namespace JeckelLab\Types\ValueObject\Exception;
+namespace JeckelLab\AdvancedTypes\ValueObject\Exception;
 
 /**
  * Class InvalidArgumentException

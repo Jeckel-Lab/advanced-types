@@ -5,9 +5,8 @@ declare(strict_types=1);
  * Created at : 18/11/2019
  */
 
-namespace JeckelLab\Types\ValueObject;
+namespace JeckelLab\AdvancedTypes\ValueObject;
 
-use Cassandra\Duration;
 use RuntimeException;
 
 /**

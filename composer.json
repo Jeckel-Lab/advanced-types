@@ -1,7 +1,7 @@
 {
     "name": "jeckel-lab/advanced-types",
     "description": "Advanced PHP types for DDD projects",
-    "type": "library",
+    "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
         {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "JeckelLab\\Types\\": "src/"
+            "JeckelLab\\AdvancedTypes\\": "src/"
         }
     },
     "require-dev": {
@@ -25,7 +25,8 @@
         "phpmd/phpmd": "^2.7",
         "phpstan/phpstan": "^0.11.19",
         "doctrine/dbal": "^2.10",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "symfony/http-kernel": "^4"
     },
     "suggest": {
         "doctrine/dbal": "Integrate Value Object as doctrine types"

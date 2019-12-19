@@ -2,22 +2,22 @@
 declare(strict_types=1);
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
- * Created at : 20/11/2019
+ * Created at : 18/11/2019
  */
 
-namespace JeckelLab\Types\Doctrine\Type;
+namespace JeckelLab\AdvancedTypes\DBAL\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use JeckelLab\Types\ValueObject\Color;
+use JeckelLab\AdvancedTypes\ValueObject\TimeDuration;
 
 /**
- * Class ColorType
- * @package JeckelLab\Types\Doctrine\Type
+ * Class TimeDurationType
+ * @package JeckelLab\AdvancedTypes\DBAL\Types
  */
-class ColorType extends Type
+class TimeDurationType extends Type
 {
-    protected const COLOR_TYPE = 'color';
+    protected const TIME_DURATION_TYPE = 'time_duration';
 
     /**
      * @param array            $fieldDeclaration
@@ -27,7 +27,7 @@ class ColorType extends Type
      */
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform): string
     {
-        return $platform->getVarcharTypeDeclarationSQL($fieldDeclaration);
+        return $platform->getIntegerTypeDeclarationSQL($fieldDeclaration);
     }
 
     /**
@@ -35,34 +35,34 @@ class ColorType extends Type
      */
     public function getName(): string
     {
-        return self::COLOR_TYPE;
+        return self::TIME_DURATION_TYPE;
     }
 
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return Color|null
+     * @return TimeDuration|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function convertToPHPValue($value, AbstractPlatform $platform): ?Color
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?TimeDuration
     {
         if (null === $value) {
             return null;
         }
-        return Color::byHex($value);
+        return new TimeDuration((int) $value);
     }
 
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return string|null
+     * @return int|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?int
     {
-        if ($value instanceof Color) {
-            return $value->getHex();
+        if ($value instanceof TimeDuration) {
+            return $value->getValue();
         }
         return null;
     }

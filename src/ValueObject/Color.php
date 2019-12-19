@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Created at : 20/11/2019
  */
 
-namespace JeckelLab\Types\ValueObject;
+namespace JeckelLab\AdvancedTypes\ValueObject;
 
-use JeckelLab\Types\ValueObject\Exception\InvalidArgumentException;
+use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 
 /**
  * Class Color

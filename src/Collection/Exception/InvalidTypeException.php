@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Created at : 14/11/2019
  */
 
-namespace JeckelLab\Types\Collection\Exception;
+namespace JeckelLab\AdvancedTypes\Collection\Exception;
 
 /**
  * Class InvalidTypeException
- * @package JeckelLab\Types\Collection\Exception
+ * @package JeckelLab\AdvancedTypes\Collection\Exception
  */
 class InvalidTypeException extends CollectionException
 {

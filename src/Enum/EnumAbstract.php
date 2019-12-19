@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created at : 14/11/2019
  */
 
-namespace JeckelLab\Types\Enum;
+namespace JeckelLab\AdvancedTypes\Enum;
 
 use JsonSerializable;
 use MabeEnum\Enum;

@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created at : 13/12/2019
  */
 
-namespace JeckelLab\Types\Twig;
+namespace JeckelLab\AdvancedTypes\Twig;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -23,9 +23,9 @@ class DurationExtension extends AbstractExtension
      * DurationExtension constructor.
      * @param int|null $dayDuration
      */
-    public function __construct(?int $dayDuration)
+    public function __construct($dayDuration = null)
     {
-        if (null !== $dayDuration) {
+        if (null !== $dayDuration & is_numeric($dayDuration)) {
             $this->dayDuration = $dayDuration;
         }
     }

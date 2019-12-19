@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created at : 14/11/2019
  */
 
-namespace JeckelLab\Types\Collection;
+namespace JeckelLab\AdvancedTypes\Collection;
 
 use JeckelLab\Types\Collection\Exception\InvalidTypeException;
 use JeckelLab\Types\Collection\Exception\OutOfRangeException;
@@ -13,7 +13,7 @@ use ArrayIterator;
 
 /**
  * Class CollectionAbstract
- * @package JeckelLab\Types\Collection
+ * @package JeckelLab\AdvancedTypes\Collection
  */
 abstract class CollectionAbstract implements CollectionInterface
 {
