@@ -12,7 +12,7 @@ use MabeEnum\Enum;
 
 /**
  * Class EnumAbstract
- * @package JeckelLab\Types\Enum
+ * @package JeckelLab\AdvancedTypes\Enum
  */
 abstract class EnumAbstract extends Enum implements JsonSerializable
 {

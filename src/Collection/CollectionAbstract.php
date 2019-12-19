@@ -7,8 +7,8 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\Collection;
 
-use JeckelLab\Types\Collection\Exception\InvalidTypeException;
-use JeckelLab\Types\Collection\Exception\OutOfRangeException;
+use JeckelLab\AdvancedTypes\Collection\Exception\InvalidTypeException;
+use JeckelLab\AdvancedTypes\Collection\Exception\OutOfRangeException;
 use ArrayIterator;
 
 /**

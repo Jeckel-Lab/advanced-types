@@ -25,7 +25,7 @@ Just extend the `CollectionAbstract` class, and override the constructor like th
 
 ```php
 <?php
-use JeckelLab\Types\Collection\CollectionAbstract;
+use JeckelLab\AdvancedTypes\Collection\CollectionAbstract;
 
 class Clients extends CollectionAbstract
 {
@@ -61,8 +61,8 @@ Configure type DBAL:
 doctrine:
     dbal:
         types:
-            time_duration: JeckelLab\Types\Doctrine\Type\TimeDurationType
-            color: JeckelLab\Types\Doctrine\Type\ColorType
+            time_duration: JeckelLab\AdvancedTypes\DBAL\Type\TimeDurationType
+            color: JeckelLab\AdvancedTypes\DBAL\Type\ColorType
 ```
 
 Use it in your entity:

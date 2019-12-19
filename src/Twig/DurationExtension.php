@@ -26,7 +26,7 @@ class DurationExtension extends AbstractExtension
     public function __construct($dayDuration = null)
     {
         if (null !== $dayDuration & is_numeric($dayDuration)) {
-            $this->dayDuration = $dayDuration;
+            $this->dayDuration = (int) $dayDuration;
         }
     }
 
