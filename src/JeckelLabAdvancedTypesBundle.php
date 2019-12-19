@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Created at : 13/11/2019
  */
 
-namespace JeckelLab\AdvancedTypesBundle;
+namespace JeckelLab\AdvancedTypes;
 
-use JeckelLab\AdvancedTypesBundle\DependencyInjection\AdvancedTypesExtension;
+use JeckelLab\AdvancedTypes\DependencyInjection\AdvancedTypesExtension;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

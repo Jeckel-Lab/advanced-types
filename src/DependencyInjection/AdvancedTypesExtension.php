@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created at : 19/12/2019
  */
 
-namespace JeckelLab\AdvancedTypesBundle\DependencyInjection;
+namespace JeckelLab\AdvancedTypes\DependencyInjection;
 
 use Exception;
 use Symfony\Component\Config\FileLocator;
