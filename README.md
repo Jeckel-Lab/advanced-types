@@ -25,7 +25,7 @@ Just extend the `CollectionAbstract` class, and override the constructor like th
 
 ```php
 <?php
-use JeckelLab\Types\Collection\CollectionAbstract;
+use JeckelLab\AdvancedTypes\Collection\CollectionAbstract;
 
 class Clients extends CollectionAbstract
 {
@@ -45,5 +45,47 @@ class Clients extends CollectionAbstract
     {
         return parent::getItem($index);
     }
+}
+```
+
+
+# Value Object
+
+## Usage with doctrine
+
+Configure type DBAL:
+
+```yaml
+# config/packages/doctrine.yaml
+
+doctrine:
+    dbal:
+        types:
+            time_duration: JeckelLab\AdvancedTypes\DBAL\Type\TimeDurationType
+            color: JeckelLab\AdvancedTypes\DBAL\Type\ColorType
+```
+
+Use it in your entity:
+
+```php
+<?php
+
+use Doctrine\ORM\Mapping as ORM;
+use JeckelLab\Types\ValueObject\TimeDuration;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\TimeEntryRepository")
+ */
+class TimeEntry
+{
+    // ...
+
+    /**
+     * @ORM\Column(type="time_duration", nullable=true)
+     * @var TimeDuration|null
+     */
+    private $duration;
+
+    // ...
 }
 ```

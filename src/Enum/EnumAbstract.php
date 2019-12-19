@@ -5,14 +5,14 @@ declare(strict_types=1);
  * Created at : 14/11/2019
  */
 
-namespace JeckelLab\Types\Enum;
+namespace JeckelLab\AdvancedTypes\Enum;
 
 use JsonSerializable;
 use MabeEnum\Enum;
 
 /**
  * Class EnumAbstract
- * @package JeckelLab\Types\Enum
+ * @package JeckelLab\AdvancedTypes\Enum
  */
 abstract class EnumAbstract extends Enum implements JsonSerializable
 {
@@ -26,5 +26,17 @@ abstract class EnumAbstract extends Enum implements JsonSerializable
     public function jsonSerialize()
     {
         return $this->getValue();
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        $value = $this->getValue();
+        if (is_string($value)) {
+            return $value;
+        }
+        return parent::__toString();
     }
 }
