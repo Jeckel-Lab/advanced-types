@@ -49,7 +49,7 @@ class DurationExtension extends AbstractExtension
         if ($duration === 0) {
             return '0';
         }
-        
+
         $minutes = floor($duration / 60) % 60;
         $hours = floor(($duration % $this->dayDuration) / 3600) ;
         $days = floor($duration / $this->dayDuration);
