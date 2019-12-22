@@ -27,10 +27,10 @@ class DateTimePeriod
 
     /**
      * DateTimePeriod constructor.
-     * @param DateTimeInterface $start
-     * @param DateTimeInterface $end
+     * @param DateTimeImmutable $start
+     * @param DateTimeImmutable $end
      */
-    public function __construct(DateTimeInterface $start, DateTimeInterface $end)
+    protected function __construct(DateTimeImmutable $start, DateTimeImmutable $end)
     {
         if (! self::isValid($start, $end)) {
             throw new InvalidArgumentException(sprintf(
@@ -38,14 +38,6 @@ class DateTimePeriod
                 $start->format('c'),
                 $end->format('c')
             ));
-        }
-        if (! $start instanceof DateTimeImmutable) {
-            /** @var DateTime $start */
-            $start = DateTimeImmutable::createFromMutable($start);
-        }
-        if (! $end instanceof DateTimeImmutable) {
-            /** @var DateTime $end */
-            $end = DateTimeImmutable::createFromMutable($end);
         }
         $this->start = $start;
         $this->end   = $end;
@@ -79,17 +71,27 @@ class DateTimePeriod
 
     /**
      * @param DateTimeInterface $start
+     * @param DateTimeInterface $end
+     * @return DateTimePeriod
+     */
+    public static function byStartAndEnd(DateTimeInterface $start, DateTimeInterface $end): DateTimePeriod
+    {
+        $startImmutable = self::createImmutableFromInterface($start);
+        $endImmutable   = self::createImmutableFromInterface($end);
+        return new self($startImmutable, $endImmutable);
+    }
+
+    /**
+     * @param DateTimeInterface $start
      * @param DateInterval      $interval
      * @return DateTimePeriod
      */
     public static function byStartAndInterval(DateTimeInterface $start, DateInterval $interval): DateTimePeriod
     {
-        if ($start instanceof DateTime) {
-            $start = DateTimeImmutable::createFromMutable($start);
-        }
+        $startImmutable = self::createImmutableFromInterface($start);
         return new DateTimePeriod(
-            $start,
-            $start->add($interval)
+            $startImmutable,
+            $startImmutable->add($interval)
         );
     }
 
@@ -100,12 +102,31 @@ class DateTimePeriod
      */
     public static function byEndAndInterval(DateTimeInterface $end, DateInterval $interval): DateTimePeriod
     {
-        if ($end instanceof DateTime) {
-            $end = DateTimeImmutable::createFromMutable($end);
-        }
+        $endImmutable = self::createImmutableFromInterface($end);
         return new DateTimePeriod(
-            $end->sub($interval),
-            $end
+            $endImmutable->sub($interval),
+            $endImmutable
         );
+    }
+
+    /**
+     * @param DateTimeInterface $dateTime
+     * @return DateTimeImmutable
+     * @throws InvalidArgumentException
+     * @SuppressWarnings(PHPMD.StaticAccess)
+     */
+    protected static function createImmutableFromInterface(DateTimeInterface $dateTime): DateTimeImmutable
+    {
+        if ($dateTime instanceof DateTimeImmutable) {
+            return $dateTime;
+        }
+        if ($dateTime instanceof DateTime) {
+            return DateTimeImmutable::createFromMutable($dateTime);
+        }
+        $immutable = DateTimeImmutable::createFromFormat('c', $dateTime->format('c'));
+        if (false === $immutable) {
+            throw new InvalidArgumentException('Invalid datetime provided');
+        }
+        return $immutable;
     }
 }
