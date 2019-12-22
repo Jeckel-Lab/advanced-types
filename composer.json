@@ -26,7 +26,8 @@
         "phpstan/phpstan": "^0.11.19",
         "doctrine/dbal": "^2.10",
         "twig/twig": "^3.0",
-        "symfony/http-kernel": "^4"
+        "symfony/http-kernel": "^4",
+        "phpro/grumphp": "^0.17.1"
     },
     "suggest": {
         "doctrine/dbal": "Integrate Value Object as doctrine types"

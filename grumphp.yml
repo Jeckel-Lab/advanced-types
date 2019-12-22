@@ -1,0 +1,6 @@
+parameters:
+    tasks:
+        phpcs: null
+        phpstan: null
+        phpmd: null
+
