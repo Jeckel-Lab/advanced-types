@@ -6,6 +6,7 @@
 
 namespace Tests\JeckelLab\AdvancedTypes\DBAL\Types;
 
+use DateTime;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use JeckelLab\AdvancedTypes\DBAL\Types\UrlType;
 use JeckelLab\AdvancedTypes\ValueObject\Url;
@@ -24,6 +25,33 @@ class UrlTypeTest extends TestCase
         parent::setUp();
         $this->platform = $this->getMockForAbstractClass(AbstractPlatform::class);
     }
+
+    /**
+     * @dataProvider getDbValues
+     */
+    public function testConvertToPHPValueToNull($dbValue)
+    {
+        $this->assertNull((new UrlType())->convertToPHPValue($dbValue, $this->platform));
+    }
+
+    public function testConvertToPHPValue(): void
+    {
+        $urlString = 'http://google.com';
+        $url = (new UrlType())->convertToPHPValue($urlString, $this->platform);
+        $this->assertEquals($urlString, $url->getUrl());
+    }
+
+    /**
+     * @return array
+     */
+    public function getDbValues(): array
+    {
+        return [
+            [ null ],
+            [ 'foobar' ]
+        ];
+    }
+
 
     public function testConvertToDatabaseValue()
     {

@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\DBAL\Types;
 
+use Assert\InvalidArgumentException;
 use JeckelLab\AdvancedTypes\ValueObject\Url;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
@@ -41,13 +42,20 @@ class UrlType extends Type
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return Url
+     * @return Url|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function convertToPHPValue($value, AbstractPlatform $platform): Url
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?Url
     {
-        return new Url($value);
+        if (null === $value) {
+            return null;
+        }
+        try {
+            return new Url($value);
+        } catch (InvalidArgumentException $e) {
+            return null;
+        }
     }
 
     /**
