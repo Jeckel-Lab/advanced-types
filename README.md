@@ -61,8 +61,10 @@ Configure type DBAL:
 doctrine:
     dbal:
         types:
-            time_duration: JeckelLab\AdvancedTypes\DBAL\Type\TimeDurationType
-            color: JeckelLab\AdvancedTypes\DBAL\Type\ColorType
+            color: JeckelLab\AdvancedTypes\DBAL\Types\ColorType
+            email: JeckelLab\AdvancedTypes\DBAL\Types\EmailType
+            time_duration: JeckelLab\AdvancedTypes\DBAL\Type\sTimeDurationType
+            url: JeckelLab\AdvancedTypes\DBAL\Types\UrlType
 ```
 
 Use it in your entity:
