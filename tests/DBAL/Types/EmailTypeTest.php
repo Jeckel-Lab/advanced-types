@@ -25,6 +25,32 @@ class EmailTypeTest extends TestCase
         $this->platform = $this->getMockForAbstractClass(AbstractPlatform::class);
     }
 
+    /**
+     * @dataProvider getDbValues
+     */
+    public function testConvertToPHPValueToNull($dbValue)
+    {
+        $this->assertNull((new EmailType())->convertToPHPValue($dbValue, $this->platform));
+    }
+
+    public function testConvertToPHPValue(): void
+    {
+        $emailString = 'foo@bar.com';
+        $email = (new EmailType())->convertToPHPValue($emailString, $this->platform);
+        $this->assertEquals($emailString, $email->getEmail());
+    }
+
+    /**
+     * @return array
+     */
+    public function getDbValues(): array
+    {
+        return [
+            [ null ],
+            [ 'foobar' ]
+        ];
+    }
+
     public function testConvertToDatabaseValue(): void
     {
         $emailString = 'foo@bar.com';
