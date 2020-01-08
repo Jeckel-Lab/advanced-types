@@ -53,14 +53,14 @@ class UrlType extends Type
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return string
+     * @return string|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): string
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof Url) {
-            $value = $value->getUrl();
+            return $value->getUrl();
         }
-        return $value;
+        return null;
     }
 }

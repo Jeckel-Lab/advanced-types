@@ -12,7 +12,6 @@ use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase
 {
-
     /**
      * @dataProvider getInvalidEmails
      * @param $email

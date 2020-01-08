@@ -53,14 +53,14 @@ class EmailType extends Type
     /**
      * @param mixed            $value
      * @param AbstractPlatform $platform
-     * @return string
+     * @return string|null
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): string
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof Email) {
-            $value = $value->getEmail();
+            return $value->getEmail();
         }
-        return $value;
+        return null;
     }
 }
