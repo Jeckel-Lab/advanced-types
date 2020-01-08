@@ -4,3 +4,5 @@
 
 /php.sh
 /.phpcs-cache
+
+/.phpunit.result.cache

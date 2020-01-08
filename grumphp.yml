@@ -3,4 +3,5 @@ parameters:
         phpcs: null
         phpstan: null
         phpmd: null
+        phpunit: null
 
