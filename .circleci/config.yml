@@ -57,6 +57,15 @@ jobs:
           at: /app
       - run: ./vendor/bin/phpstan analyse
 
+    # Test security issues in dependencies
+  security_check:
+    docker:
+      - image: jeckel/php-test:7.1-cli-alpine
+    working_directory: /app/project
+    steps:
+      - checkout
+      - run: composer update --dry-run roave/security-advisories
+
 #  phpunit:
 #    docker:
 #      - image: jeckel/php-test:7.3-cli-alpine
@@ -65,6 +74,15 @@ jobs:
 #      - attach_workspace:
 #          at: /app
 #      - run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+
+
+  # Final build used to validate the whole test
+  # @see workflows for dependencies
+  builds_completed:
+    docker:
+      - image: docker:git
+    steps:
+      - run: echo "Builds completed with success"
 
 # Define the workflow:
 workflows:
@@ -86,3 +104,10 @@ workflows:
       - phpstan:
           requires:
             - build
+      - security_check
+      - builds_completed:
+          requires:
+            - phpcs
+            - phpmd
+            - phpstan
+            - security_check
