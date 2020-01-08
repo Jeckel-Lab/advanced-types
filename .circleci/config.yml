@@ -66,13 +66,14 @@ jobs:
       - checkout
       - run: composer update --dry-run roave/security-advisories
 
-#  phpunit:
-#    docker:
-#      - image: jeckel/php-test:7.3-cli-alpine
-#    working_directory: /app/project
-#    steps:
-#      - attach_workspace:
-#          at: /app
+  phpunit:
+    docker:
+      - image: jeckel/php-test:7.3-cli-alpine
+    working_directory: /app/project
+    steps:
+      - attach_workspace:
+          at: /app
+      - run: ./vendor/bin/phpunit
 #      - run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
 
 
@@ -98,9 +99,9 @@ workflows:
       - phpmd:
           requires:
             - build
-#      - phpunit:
-#          requires:
-#            - build
+      - phpunit:
+          requires:
+            - build
       - phpstan:
           requires:
             - build
@@ -110,4 +111,5 @@ workflows:
             - phpcs
             - phpmd
             - phpstan
+            - phpunit
             - security_check
