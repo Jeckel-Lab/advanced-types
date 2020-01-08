@@ -11,7 +11,7 @@ use Assert\Assert;
 
 /**
  * Class Url
- * @package App\Domain\ValueObject
+ * @package JeckelLab\AdvancedTypes\ValueObject
  */
 class Url
 {
