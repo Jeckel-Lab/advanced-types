@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at: 08/01/2020
@@ -13,6 +14,10 @@ use JeckelLab\AdvancedTypes\ValueObject\Url;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class UrlTypeTest
+ * @package Tests\JeckelLab\AdvancedTypes\DBAL\Types
+ */
 class UrlTypeTest extends TestCase
 {
     /**

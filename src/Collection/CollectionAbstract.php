@@ -1,9 +1,11 @@
 <?php
-declare(strict_types=1);
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at : 14/11/2019
  */
+
+declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\Collection;
 
@@ -120,7 +122,7 @@ abstract class CollectionAbstract implements CollectionInterface
      * Implements countable.
      * @return integer
      */
-    public function count() : int
+    public function count(): int
     {
         return count($this->items);
     }
@@ -171,7 +173,7 @@ abstract class CollectionAbstract implements CollectionInterface
      * @param integer $offset
      * @return boolean
      */
-    public function offsetExists($offset) : bool
+    public function offsetExists($offset): bool
     {
         return $this->indexExists($offset);
     }

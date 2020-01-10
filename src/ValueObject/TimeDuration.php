@@ -1,9 +1,11 @@
 <?php
-declare(strict_types=1);
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at : 18/11/2019
  */
+
+declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
@@ -63,7 +65,7 @@ class TimeDuration
         if (is_string($result)) {
             return $result;
         }
-        throw new RuntimeException('Invalid format for time duration '.$format);
+        throw new RuntimeException('Invalid format for time duration ' . $format);
     }
 
     /**
