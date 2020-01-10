@@ -22,7 +22,7 @@ class TimeDurationType extends Type
     protected const TIME_DURATION_TYPE = 'time_duration';
 
     /**
-     * @param array            $fieldDeclaration
+     * @param mixed[]          $fieldDeclaration
      * @param AbstractPlatform $platform
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)

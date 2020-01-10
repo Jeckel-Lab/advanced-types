@@ -23,7 +23,7 @@ class UrlType extends Type
     protected const CUSTOM_TYPE = 'url';
 
     /**
-     * @param array            $fieldDeclaration
+     * @param mixed[]          $fieldDeclaration
      * @param AbstractPlatform $platform
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)

@@ -73,9 +73,17 @@ jobs:
     steps:
       - attach_workspace:
           at: /app
-      - run: ./vendor/bin/phpunit
-#      - run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+      - run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
 
+  # Check static analysis
+  psalm:
+    docker:
+      - image: jeckel/php-test:7.3-cli-alpine
+    working_directory: /app/project
+    steps:
+      - attach_workspace:
+          at: /app
+      - run: ./vendor/bin/psalm
 
   # Final build used to validate the whole test
   # @see workflows for dependencies
@@ -105,6 +113,9 @@ workflows:
       - phpstan:
           requires:
             - build
+      - psalm:
+          requires:
+            - build
       - security_check
       - builds_completed:
           requires:
@@ -112,4 +123,5 @@ workflows:
             - phpmd
             - phpstan
             - phpunit
+            - psalm
             - security_check

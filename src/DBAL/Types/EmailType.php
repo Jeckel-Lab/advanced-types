@@ -23,7 +23,7 @@ class EmailType extends Type
     protected const CUSTOM_TYPE = 'email';
 
     /**
-     * @param array            $fieldDeclaration
+     * @param mixed[]          $fieldDeclaration
      * @param AbstractPlatform $platform
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)

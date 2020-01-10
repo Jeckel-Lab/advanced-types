@@ -22,7 +22,7 @@ class ColorType extends Type
     protected const COLOR_TYPE = 'color';
 
     /**
-     * @param array            $fieldDeclaration
+     * @param mixed[]          $fieldDeclaration
      * @param AbstractPlatform $platform
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)

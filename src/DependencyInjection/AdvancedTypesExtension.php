@@ -21,8 +21,10 @@ use Symfony\Component\DependencyInjection\Loader;
 class AdvancedTypesExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * @param mixed[]          $configs
+     * @param ContainerBuilder $container
      * @throws Exception
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
