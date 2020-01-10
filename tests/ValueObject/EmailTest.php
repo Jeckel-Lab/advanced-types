@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at: 08/01/2020
@@ -10,6 +11,10 @@ use Assert\InvalidArgumentException;
 use JeckelLab\AdvancedTypes\ValueObject\Email;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class EmailTest
+ * @package Tests\JeckelLab\AdvancedTypes\ValueObject
+ */
 class EmailTest extends TestCase
 {
     /**

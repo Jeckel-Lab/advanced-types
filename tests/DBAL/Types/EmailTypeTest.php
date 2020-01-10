@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Julien Mercier-Rojas <julien@jeckel-lab.fr>
  * Created at: 08/01/2020
@@ -12,6 +13,10 @@ use JeckelLab\AdvancedTypes\ValueObject\Email;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class EmailTypeTest
+ * @package Tests\JeckelLab\AdvancedTypes\DBAL\Types
+ */
 class EmailTypeTest extends TestCase
 {
     /**
