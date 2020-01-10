@@ -1,4 +1,7 @@
-[![CircleCI](https://circleci.com/gh/Jeckel-Lab/advanced-types.svg?style=svg)](https://circleci.com/gh/Jeckel-Lab/advanced-types) [![Latest Stable Version](https://poser.pugx.org/jeckel-lab/advanced-types/v/stable)](https://packagist.org/packages/jeckel-lab/advanced-types) [![Total Downloads](https://poser.pugx.org/jeckel-lab/advanced-types/downloads)](https://packagist.org/packages/jeckel-lab/advanced-types)
+[![CircleCI](https://circleci.com/gh/Jeckel-Lab/advanced-types.svg?style=svg)](https://circleci.com/gh/Jeckel-Lab/advanced-types)
+[![Latest Stable Version](https://poser.pugx.org/jeckel-lab/advanced-types/v/stable)](https://packagist.org/packages/jeckel-lab/advanced-types) [![Total Downloads](https://poser.pugx.org/jeckel-lab/advanced-types/downloads)](https://packagist.org/packages/jeckel-lab/advanced-types)
+[![Build Status](https://travis-ci.org/Jeckel-Lab/advanced-types.svg?branch=master)](https://travis-ci.org/Jeckel-Lab/advanced-types)
+[![codecov](https://codecov.io/gh/jeckel-lab/advanced-types/branch/master/graph/badge.svg)](https://codecov.io/gh/jeckel-lab/advanced-types)
 
 # Advanced PHP Types
 
@@ -18,8 +21,13 @@ See documentation of [marc-mabe/php-enum](https://github.com/marc-mabe/php-enum)
 
 > The only addition is the implementation of `JsonSerializable` interface to serialize enum as it's value.
 
-
 # Value Object
+
+- Color
+- DateTimePeriod
+- Email
+- TimeDuration
+- Url
 
 ## Usage with doctrine
 
