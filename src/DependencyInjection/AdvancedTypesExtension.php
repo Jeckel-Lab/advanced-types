@@ -24,6 +24,7 @@ class AdvancedTypesExtension extends Extension
      * @param mixed[]          $configs
      * @param ContainerBuilder $container
      * @throws Exception
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
