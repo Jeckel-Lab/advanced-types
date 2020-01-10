@@ -21,7 +21,8 @@ use Symfony\Component\DependencyInjection\Loader;
 class AdvancedTypesExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * @param mixed[]          $configs
+     * @param ContainerBuilder $container
      * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
