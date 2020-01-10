@@ -2,7 +2,11 @@ parameters:
     tasks:
         phpcs: null
         phpstan: null
-        phpmd: null
+        phpmd:
+            whitelist_patterns:
+                - /^src\/(.*)/
+#            ruleset:
+#                - ./ruleset.xml
         phpunit: null
         psalm:
             config: psalm.xml

@@ -84,22 +84,20 @@ class TimeDuration
 
     /**
      * @param int $duration
-     * @return $this
+     * @return self
      */
     public function add(int $duration): self
     {
-        $this->duration += $duration;
-        return $this;
+        return new self($this->duration += $duration);
     }
 
     /**
      * @param TimeDuration $duration
-     * @return $this
+     * @return self
      */
     public function addDuration(TimeDuration $duration): self
     {
-        $this->add($duration->getValue());
-        return $this;
+        return $this->add($duration->getValue());
     }
 
     /**
