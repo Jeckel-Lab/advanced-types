@@ -33,7 +33,7 @@ class DurationExtension extends AbstractExtension
     }
 
     /**
-     * @return iterable
+     * @return TwigFilter[]
      */
     public function getFilters(): iterable
     {
