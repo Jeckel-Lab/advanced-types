@@ -1,7 +1,7 @@
 parameters:
     tasks:
         phpcs: null
-        phpstan: null
+#        phpstan: null
         phpmd:
             whitelist_patterns:
                 - /^src\/(.*)/
