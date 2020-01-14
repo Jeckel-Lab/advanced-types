@@ -36,7 +36,8 @@
         "symfony/http-kernel": "^4 || ^5",
         "phpro/grumphp": "^0.17.1",
         "phpunit/phpunit": "^8.5",
-        "vimeo/psalm": "^3.8"
+        "vimeo/psalm": "^3.8",
+        "symfony/form": "^5.0"
     },
     "suggest": {
         "doctrine/dbal": "Integrate Value Object as doctrine types"
