@@ -48,15 +48,6 @@ jobs:
           at: /app
       - run: ./vendor/bin/phpmd src text cleancode,codesize,design,naming,unusedcode
 
-#  phpstan:
-#    docker:
-#      - image: jeckel/php-test:7.2-cli-alpine
-#    working_directory: /app/project
-#    steps:
-#      - attach_workspace:
-#          at: /app
-#      - run: ./vendor/bin/phpstan analyse
-
     # Test security issues in dependencies
   security_check:
     docker:
@@ -110,9 +101,6 @@ workflows:
       - phpunit:
           requires:
             - build
-#      - phpstan:
-#          requires:
-#            - build
       - psalm:
           requires:
             - build
@@ -121,7 +109,6 @@ workflows:
           requires:
             - phpcs
             - phpmd
-#            - phpstan
             - phpunit
             - psalm
             - security_check
