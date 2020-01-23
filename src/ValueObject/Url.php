@@ -14,6 +14,7 @@ use Assert\Assert;
 /**
  * Class Url
  * @package JeckelLab\AdvancedTypes\ValueObject
+ * @psalm-immutable
  */
 class Url
 {

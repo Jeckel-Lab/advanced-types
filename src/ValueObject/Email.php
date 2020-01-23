@@ -14,6 +14,7 @@ use Assert\Assert;
 /**
  * Class Email
  * @package JeckelLab\AdvancedTypes\ValueObject
+ * @psalm-immutable
  */
 class Email
 {

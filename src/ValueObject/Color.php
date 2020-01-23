@@ -14,6 +14,7 @@ use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 /**
  * Class Color
  * @package ValueObject
+ * @psalm-immutable
  */
 class Color
 {

@@ -13,6 +13,7 @@ use RuntimeException;
 
 /**
  * Class TimeDuration
+ * @psalm-immutable
  */
 class TimeDuration
 {
@@ -88,7 +89,7 @@ class TimeDuration
      */
     public function add(int $duration): self
     {
-        return new self($this->duration += $duration);
+        return new self($duration + $this->duration);
     }
 
     /**
