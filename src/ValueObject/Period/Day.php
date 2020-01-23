@@ -13,11 +13,11 @@ use DateTimeImmutable;
 use DateTimeInterface;
 
 /**
- * Class Month
+ * Class Day
  * @package JeckelLab\AdvancedTypes\ValueObject\Period
  * @psalm-immutable
  */
-class Month implements PeriodInterface
+class Day implements PeriodInterface
 {
     /** @var DateTimeImmutable */
     protected $start;
@@ -31,22 +31,26 @@ class Month implements PeriodInterface
     /** @var int */
     protected $month;
 
+    /** @var int */
+    protected $day;
+
     /**
-     * Month constructor.
+     * Day constructor.
      * @param int $year
      * @param int $month
+     * @param int $day
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function __construct(int $year, int $month)
+    public function __construct(int $year, int $month, int $day)
     {
         $this->year = $year;
         $this->month = $month;
-
+        $this->day = $day;
         $this->start = DateTimeImmutable::createFromFormat(
             'Y-m-d H:i:s',
-            sprintf('%d-%d-01 00:00:00', $year, $month)
+            sprintf('%d-%d-%d 00:00:00', $year, $month, $day)
         );
-        $this->end = $this->start->modify('+1 month')->modify('-1 second');
+        $this->end = $this->start->modify('+1 day')->modify('-1 second');
     }
 
     /**
@@ -82,6 +86,14 @@ class Month implements PeriodInterface
     }
 
     /**
+     * @return int
+     */
+    public function day(): int
+    {
+        return $this->day;
+    }
+
+    /**
      * @param DateTimeInterface $dateTime
      * @return static
      */
@@ -89,7 +101,8 @@ class Month implements PeriodInterface
     {
         return new self(
             (int) $dateTime->format('Y'),
-            (int) $dateTime->format('m')
+            (int) $dateTime->format('m'),
+            (int) $dateTime->format('d')
         );
     }
 }
