@@ -14,6 +14,7 @@ use DateTimeImmutable;
 /**
  * Class Month
  * @package JeckelLab\AdvancedTypes\ValueObject\Period
+ * @psalm-immutable
  */
 class Month implements PeriodInterface
 {
