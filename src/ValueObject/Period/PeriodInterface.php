@@ -18,10 +18,10 @@ interface PeriodInterface
     /**
      * @return DateTimeImmutable
      */
-    public function getStart(): DateTimeImmutable;
+    public function start(): DateTimeImmutable;
 
     /**
      * @return DateTimeImmutable
      */
-    public function getEnd(): DateTimeImmutable;
+    public function end(): DateTimeImmutable;
 }
