@@ -104,6 +104,15 @@ class TimeDuration implements ValueObject
     }
 
     /**
+     * @param int $duration
+     * @return $this
+     */
+    public function sub(int $duration): self
+    {
+        return new self($this->duration - $duration);
+    }
+
+    /**
      * @param TimeDuration $duration
      * @return self
      */
