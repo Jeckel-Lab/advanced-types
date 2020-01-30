@@ -33,13 +33,43 @@ class TimeDurationTest extends TestCase
 
     public function testAdd(): void
     {
-        $durationA = new TimeDuration(120);
-        $durationB = new TimeDuration(50);
-        $durationC = $durationA->addDuration($durationB);
-        $this->assertNotSame($durationA, $durationC);
-        $this->assertNotSame($durationB, $durationC);
-        $this->assertEquals(120, $durationA->getValue());
-        $this->assertEquals(50, $durationB->getValue());
-        $this->assertEquals(170, $durationC->getValue());
+        $duration = new TimeDuration(200);
+        $newDuration = $duration->add(50);
+        $this->assertNotSame($duration, $newDuration);
+        $this->assertEquals(200, $duration->getValue());
+        $this->assertEquals(250, $newDuration->getValue());
+    }
+
+    public function testSub(): void
+    {
+        $duration = new TimeDuration(200);
+        $newDuration = $duration->sub(50);
+        $this->assertNotSame($duration, $newDuration);
+        $this->assertEquals(200, $duration->getValue());
+        $this->assertEquals(150, $newDuration->getValue());
+    }
+
+    public function testSubDuration(): void
+    {
+        $duration = new TimeDuration(200);
+        $diff = new TimeDuration(50);
+        $newDuration = $duration->subDuration($diff);
+        $this->assertNotSame($duration, $newDuration);
+        $this->assertNotSame($diff, $newDuration);
+        $this->assertEquals(200, $duration->getValue());
+        $this->assertEquals(50, $diff->getValue());
+        $this->assertEquals(150, $newDuration->getValue());
+    }
+
+    public function testAddDuration(): void
+    {
+        $duration = new TimeDuration(200);
+        $diff = new TimeDuration(50);
+        $newDuration = $duration->addDuration($diff);
+        $this->assertNotSame($duration, $newDuration);
+        $this->assertNotSame($diff, $newDuration);
+        $this->assertEquals(200, $duration->getValue());
+        $this->assertEquals(50, $diff->getValue());
+        $this->assertEquals(250, $newDuration->getValue());
     }
 }
