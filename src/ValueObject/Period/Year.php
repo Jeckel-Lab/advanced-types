@@ -15,6 +15,7 @@ use DateTimeInterface;
 /**
  * Class Year
  * @package JeckelLab\AdvancedTypes\ValueObject\Period
+ * @psalm-immutable
  */
 class Year implements PeriodInterface
 {

@@ -93,12 +93,30 @@ class TimeDuration
     }
 
     /**
+     * @param int $duration
+     * @return $this
+     */
+    public function sub(int $duration): self
+    {
+        return new self($this->duration - $duration);
+    }
+
+    /**
      * @param TimeDuration $duration
      * @return self
      */
     public function addDuration(TimeDuration $duration): self
     {
         return $this->add($duration->getValue());
+    }
+
+    /**
+     * @param TimeDuration $duration
+     * @return $this
+     */
+    public function subDuration(TimeDuration $duration): self
+    {
+        return $this->sub($duration->duration);
     }
 
     /**
