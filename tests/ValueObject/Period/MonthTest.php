@@ -52,4 +52,10 @@ final class MonthTest extends TestCase
         $this->assertEquals('2020-01-01 00:00:00', $month->start()->format('Y-m-d H:i:s'));
         $this->assertEquals('2020-01-31 23:59:59', $month->end()->format('Y-m-d H:i:s'));
     }
+
+    public function testToString(): void
+    {
+        $this->assertEquals('2020-11', (new Month(2020, 11))->__toString());
+        $this->assertEquals('2019-01', (new Month(2019, 1))->__toString());
+    }
 }

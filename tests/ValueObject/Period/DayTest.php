@@ -43,4 +43,10 @@ final class DayTest extends TestCase
         $this->assertEquals('2020-01-23 00:00:00', $month->start()->format('Y-m-d H:i:s'));
         $this->assertEquals('2020-01-23 23:59:59', $month->end()->format('Y-m-d H:i:s'));
     }
+
+    public function testToString(): void
+    {
+        $this->assertEquals('2020-11-24', (new Day(2020, 11, 24))->__toString());
+        $this->assertEquals('2019-01-01', (new Day(2019, 1, 1))->__toString());
+    }
 }
