@@ -9,8 +9,10 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject\Period;
 
+use Assert\Assert;
 use DateTimeImmutable;
 use DateTimeInterface;
+use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 
 /**
  * Class Month
@@ -102,5 +104,18 @@ class Month implements PeriodInterface
             (int) $dateTime->format('Y'),
             (int) $dateTime->format('m')
         );
+    }
+
+    /**
+     * @param string $value
+     * @return static
+     */
+    public static function byString(string $value): self
+    {
+        $matches = [];
+        if (! preg_match('/^(\d{4})-(\d{1,2})$/m', $value, $matches)) {
+            throw new InvalidArgumentException('Invalid string month provided, expected YYYY-MM');
+        }
+        return new self((int) $matches[1], (int) $matches[2]);
     }
 }
