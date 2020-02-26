@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject\Period;
 
-use Assert\Assert;
 use DateTimeImmutable;
 use DateTimeInterface;
 use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
