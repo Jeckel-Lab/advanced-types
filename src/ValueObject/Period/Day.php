@@ -99,7 +99,7 @@ class Day implements PeriodInterface
      * @return string
      * @link https://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.tostring
      */
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf('%d-%02d-%02d', $this->year, $this->month, $this->day);
     }

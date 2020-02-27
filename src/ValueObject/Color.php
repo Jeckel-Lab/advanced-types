@@ -16,7 +16,7 @@ use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
  * @package ValueObject
  * @psalm-immutable
  */
-class Color
+class Color implements ValueObject
 {
     /**
      * @var string
@@ -27,8 +27,11 @@ class Color
      * Color constructor.
      * @param string $color
      */
-    protected function __construct(string $color)
+    private function __construct(string $color)
     {
+        if (! self::isValidHex($color)) {
+            throw new InvalidArgumentException(sprintf('Color %s is not a valid hex color', $color));
+        }
         $this->color = $color;
     }
 

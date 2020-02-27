@@ -78,4 +78,15 @@ class Year implements PeriodInterface
             (int) $dateTime->format('Y')
         );
     }
+
+    /**
+     * The __toString method allows a class to decide how it will react when it is converted to a string.
+     *
+     * @return string
+     * @link https://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.tostring
+     */
+    public function __toString(): string
+    {
+        return sprintf('%d', $this->year);
+    }
 }

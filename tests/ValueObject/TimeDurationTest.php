@@ -35,7 +35,7 @@ class TimeDurationTest extends TestCase
     {
         $duration = new TimeDuration(200);
         $diff = new TimeDuration(50);
-        $newDuration = $duration->subDuration($diff);
+        $newDuration = $duration->sub($diff);
         $this->assertNotSame($duration, $newDuration);
         $this->assertNotSame($diff, $newDuration);
         $this->assertEquals(200, $duration->getValue());
@@ -47,7 +47,7 @@ class TimeDurationTest extends TestCase
     {
         $duration = new TimeDuration(200);
         $diff = new TimeDuration(50);
-        $newDuration = $duration->addDuration($diff);
+        $newDuration = $duration->add($diff);
         $this->assertNotSame($duration, $newDuration);
         $this->assertNotSame($diff, $newDuration);
         $this->assertEquals(200, $duration->getValue());
