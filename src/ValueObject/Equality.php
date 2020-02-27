@@ -5,19 +5,17 @@
  * Created at : 27/02/2020
  */
 
-declare(strict_types=1);
-
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
 /**
- * Interface ValueObject
+ * Interface Equality
  * @package JeckelLab\AdvancedTypes\ValueObject
- * @psalm-immutable
  */
-interface ValueObject
+interface Equality
 {
     /**
-     * @return string
+     * @param static $object
+     * @return bool
      */
-    public function __toString(): string;
+    public function equals($object): bool;
 }
