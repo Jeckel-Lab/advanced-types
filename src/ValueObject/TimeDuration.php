@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
+use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 use Assert\Assert;
 use RuntimeException;
 
@@ -16,7 +17,7 @@ use RuntimeException;
  * Class TimeDuration
  * @psalm-immutable
  */
-class TimeDuration implements ValueObject
+class TimeDuration implements ValueObject, Equality
 {
     /**
      * @var int
@@ -86,48 +87,42 @@ class TimeDuration implements ValueObject
     }
 
     /**
-     * @param int $duration
+     * @param int|TimeDuration $duration
      * @return self
      */
-    public function add(int $duration): self
+    public function add($duration): self
     {
-        return new self($this->duration + $duration);
+        if ($duration instanceof self) {
+            $duration = $duration->duration;
+        }
+        if (! is_int($duration)) {
+            throw new InvalidArgumentException('Invalid argument, int or TimeDuration expected');
+        }
+        return new self($duration + $this->duration);
     }
 
     /**
-     * @param int $duration
+     * @param int|TimeDuration $duration
      * @return $this
      */
-    public function sub(int $duration): self
+    public function sub($duration): self
     {
+        if ($duration instanceof self) {
+            $duration = $duration->duration;
+        }
+        if (! is_int($duration)) {
+            throw new InvalidArgumentException('Invalid argument, int or TimeDuration expected');
+        }
         return new self($this->duration - $duration);
     }
 
     /**
-     * @param int $duration
-     * @return $this
+     * @param static $object
+     * @return bool
      */
-    public function sub(int $duration): self
+    public function equals($object): bool
     {
-        return new self($this->duration - $duration);
-    }
-
-    /**
-     * @param TimeDuration $duration
-     * @return self
-     */
-    public function addDuration(TimeDuration $duration): self
-    {
-        return $this->add($duration->getValue());
-    }
-
-    /**
-     * @param TimeDuration $duration
-     * @return $this
-     */
-    public function subDuration(TimeDuration $duration): self
-    {
-        return $this->sub($duration->duration);
+        return ($object instanceof self) && ($object->duration === $this->duration);
     }
 
     /**

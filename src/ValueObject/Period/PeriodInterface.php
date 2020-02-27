@@ -8,12 +8,13 @@
 namespace JeckelLab\AdvancedTypes\ValueObject\Period;
 
 use DateTimeImmutable;
+use JeckelLab\AdvancedTypes\ValueObject\ValueObject;
 
 /**
  * Interface PeriodInterface
  * @package JeckelLab\AdvancedTypes\ValueObject\Period
  */
-interface PeriodInterface
+interface PeriodInterface extends ValueObject
 {
     /**
      * @return DateTimeImmutable
