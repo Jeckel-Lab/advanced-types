@@ -15,7 +15,7 @@ use RuntimeException;
  * Class TimeDuration
  * @psalm-immutable
  */
-class TimeDuration
+class TimeDuration implements ValueObject
 {
     /**
      * @var int

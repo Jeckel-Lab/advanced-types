@@ -36,7 +36,10 @@
         "phpro/grumphp": "^0.18.0",
         "phpunit/phpunit": "^8.5",
         "vimeo/psalm": "^3.8",
-        "symfony/form": "^5.0"
+        "symfony/form": "^5.0",
+        "phpspec/phpspec": "^6.1",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3",
+        "fzaninotto/faker": "^1.9"
     },
     "suggest": {
         "doctrine/dbal": "Integrate Value Object as doctrine types"
