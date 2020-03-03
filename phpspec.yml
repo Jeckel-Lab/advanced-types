@@ -10,4 +10,4 @@ extensions:
     blacklist_files:
       - src/JeckelLabAdvancedTypesBundle.php
     output:
-      clover: coverage.xml
+      clover: phpspec-coverage.xml
