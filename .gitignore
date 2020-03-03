@@ -8,3 +8,4 @@
 /.phpunit.result.cache
 
 /coverage.xml
+/phpspec-coverage.xml
