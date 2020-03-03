@@ -13,21 +13,22 @@ use Assert\Assert;
 
 /**
  * Class Email
- * @package JeckelLab\AdvancedTypes\ValueObject
+ * @package JeckelLab\AdvancedTypes\emailObject
+ * @psalm-immutable
  */
-class Email
+class Email implements ValueObject, Equality
 {
     /** @var string */
-    protected $value;
+    protected $email;
 
     /**
      * Email constructor.
-     * @param string $value
+     * @param string $email
      */
-    public function __construct(string $value)
+    public function __construct(string $email)
     {
-        Assert::that($value)->email();
-        $this->value = $value;
+        Assert::that($email)->email();
+        $this->email = $email;
     }
 
     /**
@@ -35,7 +36,16 @@ class Email
      */
     public function getEmail(): string
     {
-        return $this->value;
+        return $this->email;
+    }
+
+    /**
+     * @param static $object
+     * @return bool
+     */
+    public function equals($object): bool
+    {
+        return ($object instanceof self) && ($object->email === $this->email);
     }
 
     /**
@@ -43,6 +53,6 @@ class Email
      */
     public function __toString(): string
     {
-        return $this->value;
+        return $this->email;
     }
 }

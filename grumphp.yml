@@ -1,10 +1,15 @@
 parameters:
     tasks:
-        phpcs: null
+        phpcs:
+            whitelist_patterns:
+                - /^src\/(.*)/
         phpmd:
             whitelist_patterns:
                 - /^src\/(.*)/
+            ruleset:
+                - ./ruleset.xml
         phpunit: null
+        phpspec: null
         psalm:
             config: psalm.xml
             threads: 1

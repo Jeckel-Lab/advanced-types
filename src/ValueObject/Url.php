@@ -14,8 +14,9 @@ use Assert\Assert;
 /**
  * Class Url
  * @package JeckelLab\AdvancedTypes\ValueObject
+ * @psalm-immutable
  */
-class Url
+class Url implements ValueObject, Equality
 {
     /** @var string */
     protected $url;
@@ -36,6 +37,15 @@ class Url
     public function getUrl(): string
     {
         return $this->url;
+    }
+
+    /**
+     * @param static $object
+     * @return bool
+     */
+    public function equals($object): bool
+    {
+        return ($object instanceof self) && ($object->url === $this->url);
     }
 
     /**

@@ -9,12 +9,14 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
+use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 use RuntimeException;
 
 /**
  * Class TimeDuration
+ * @psalm-immutable
  */
-class TimeDuration
+class TimeDuration implements ValueObject, Equality
 {
     /**
      * @var int
@@ -83,21 +85,42 @@ class TimeDuration
     }
 
     /**
-     * @param int $duration
+     * @param int|TimeDuration $duration
      * @return self
      */
-    public function add(int $duration): self
+    public function add($duration): self
     {
-        return new self($this->duration += $duration);
+        if ($duration instanceof self) {
+            $duration = $duration->duration;
+        }
+        if (! is_int($duration)) {
+            throw new InvalidArgumentException('Invalid argument, int or TimeDuration expected');
+        }
+        return new self($duration + $this->duration);
     }
 
     /**
-     * @param TimeDuration $duration
-     * @return self
+     * @param int|TimeDuration $duration
+     * @return $this
      */
-    public function addDuration(TimeDuration $duration): self
+    public function sub($duration): self
     {
-        return $this->add($duration->getValue());
+        if ($duration instanceof self) {
+            $duration = $duration->duration;
+        }
+        if (! is_int($duration)) {
+            throw new InvalidArgumentException('Invalid argument, int or TimeDuration expected');
+        }
+        return new self($this->duration - $duration);
+    }
+
+    /**
+     * @param static $object
+     * @return bool
+     */
+    public function equals($object): bool
+    {
+        return ($object instanceof self) && ($object->duration === $this->duration);
     }
 
     /**
