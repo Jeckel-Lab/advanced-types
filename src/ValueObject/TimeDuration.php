@@ -57,9 +57,9 @@ class TimeDuration implements ValueObject
         $seconds = $this->duration % 60;
 
         $values  = [
-            $hours,
-            $minutes,
-            $seconds,
+            (string) $hours,
+            (string) $minutes,
+            (string) $seconds,
             sprintf('%02d', $minutes),
             sprintf('%02d', $seconds)
         ];
