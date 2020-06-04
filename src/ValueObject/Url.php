@@ -14,8 +14,9 @@ use Assert\Assert;
 /**
  * Class Url
  * @package JeckelLab\AdvancedTypes\ValueObject
+ * @psalm-immutable
  */
-class Url
+class Url implements ValueObject
 {
     /** @var string */
     protected $url;

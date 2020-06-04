@@ -9,12 +9,14 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
+use Assert\Assert;
 use RuntimeException;
 
 /**
  * Class TimeDuration
+ * @psalm-immutable
  */
-class TimeDuration
+class TimeDuration implements ValueObject
 {
     /**
      * @var int
@@ -25,8 +27,9 @@ class TimeDuration
      * TimeDuration constructor.
      * @param int $duration
      */
-    public function __construct(int $duration)
+    public function __construct(int $duration = 0)
     {
+        Assert::that($duration)->greaterOrEqualThan(0);
         $this->duration = $duration;
     }
 
@@ -41,7 +44,7 @@ class TimeDuration
     /**
      * @param string|null $format
      * @return string
-     * @throw RuntimeException
+     * @throws RuntimeException
      */
     public function format(?string $format = null): string
     {
@@ -54,9 +57,9 @@ class TimeDuration
         $seconds = $this->duration % 60;
 
         $values  = [
-            $hours,
-            $minutes,
-            $seconds,
+            (string) $hours,
+            (string) $minutes,
+            (string) $seconds,
             sprintf('%02d', $minutes),
             sprintf('%02d', $seconds)
         ];
@@ -88,7 +91,7 @@ class TimeDuration
      */
     public function add(int $duration): self
     {
-        return new self($this->duration += $duration);
+        return new self($this->duration + $duration);
     }
 
     /**
