@@ -14,8 +14,9 @@ use Assert\Assert;
 /**
  * Class Email
  * @package JeckelLab\AdvancedTypes\ValueObject
+ * @psalm-immutable
  */
-class Email
+class Email implements ValueObject
 {
     /** @var string */
     protected $value;

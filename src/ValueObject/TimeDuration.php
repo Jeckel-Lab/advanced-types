@@ -16,7 +16,7 @@ use RuntimeException;
  * Class TimeDuration
  * @psalm-immutable
  */
-class TimeDuration
+class TimeDuration implements ValueObject
 {
     /**
      * @var int
@@ -44,7 +44,7 @@ class TimeDuration
     /**
      * @param string|null $format
      * @return string
-     * @throw RuntimeException
+     * @throws RuntimeException
      */
     public function format(?string $format = null): string
     {

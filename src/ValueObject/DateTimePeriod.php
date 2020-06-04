@@ -18,8 +18,9 @@ use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 /**
  * Class DateTimePeriod
  * @package JeckelLab\AdvancedTypes\ValueObject
+ * @psalm-immutable
  */
-class DateTimePeriod
+class DateTimePeriod implements ValueObject
 {
     /** @var DateTimeImmutable */
     protected $start;
