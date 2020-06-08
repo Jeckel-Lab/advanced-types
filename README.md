@@ -2,6 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/jeckel-lab/advanced-types/v/stable)](https://packagist.org/packages/jeckel-lab/advanced-types) [![Total Downloads](https://poser.pugx.org/jeckel-lab/advanced-types/downloads)](https://packagist.org/packages/jeckel-lab/advanced-types)
 [![Build Status](https://travis-ci.org/Jeckel-Lab/advanced-types.svg?branch=master)](https://travis-ci.org/Jeckel-Lab/advanced-types)
 [![codecov](https://codecov.io/gh/jeckel-lab/advanced-types/branch/master/graph/badge.svg)](https://codecov.io/gh/jeckel-lab/advanced-types)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Jeckel-Lab/advanced-types)](https://dependabot.com)
 
 # Advanced PHP Types
 
