@@ -33,7 +33,7 @@
         "doctrine/dbal": "^2.10",
         "twig/twig": "^3.0",
         "symfony/http-kernel": "^4 || ^5",
-        "phpro/grumphp": "^0.18.0",
+        "phpro/grumphp": "^0.19.0",
         "phpunit/phpunit": "^8.5",
         "vimeo/psalm": "^3.8",
         "symfony/form": "^4 || ^5"
