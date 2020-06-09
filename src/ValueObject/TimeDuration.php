@@ -103,7 +103,7 @@ class TimeDuration implements ValueObject, Equality
 
     /**
      * @param int|TimeDuration $duration
-     * @return $this
+     * @return self
      */
     public function sub($duration): self
     {
@@ -122,7 +122,7 @@ class TimeDuration implements ValueObject, Equality
      */
     public function equals($object): bool
     {
-        return ($object instanceof self) && ($object->duration === $this->duration);
+        return $object->duration === $this->duration;
     }
 
     /**

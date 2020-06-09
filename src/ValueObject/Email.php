@@ -45,7 +45,7 @@ class Email implements ValueObject, Equality
      */
     public function equals($object): bool
     {
-        return ($object instanceof self) && ($object->email === $this->email);
+        return $object->email === $this->email;
     }
 
     /**
