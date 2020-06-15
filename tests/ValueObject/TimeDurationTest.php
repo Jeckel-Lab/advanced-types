@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Tests\JeckelLab\AdvancedTypes\ValueObject;
 
-use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\AdvancedTypes\ValueObject\TimeDuration;
 use PHPUnit\Framework\TestCase;
 

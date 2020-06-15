@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\DBAL\Types;
 
-use JeckelLab\AdvancedTypes\ValueObject\Email;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
+use JeckelLab\AdvancedTypes\ValueObject\Email;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 
 /**
  * Class UrlType

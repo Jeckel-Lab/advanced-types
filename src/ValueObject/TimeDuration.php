@@ -10,9 +10,9 @@ declare(strict_types=1);
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
 use Assert\AssertionFailedException;
-use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 use Assert\Assert;
 use JeckelLab\Contract\Domain\Equality;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 use RuntimeException;
 

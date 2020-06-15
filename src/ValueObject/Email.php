@@ -11,8 +11,8 @@ namespace JeckelLab\AdvancedTypes\ValueObject;
 
 use Assert\Assert;
 use Assert\AssertionFailedException;
-use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\Contract\Domain\Equality;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 
 /**
