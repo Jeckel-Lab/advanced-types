@@ -15,7 +15,7 @@
         "ext-json": "*",
         "marc-mabe/php-enum": "^4.1",
         "beberlei/assert": "^3.2",
-        "jeckel-lab/contract": "dev-master"
+        "jeckel-lab/contract": "0.1"
     },
     "autoload": {
         "psr-4": {
