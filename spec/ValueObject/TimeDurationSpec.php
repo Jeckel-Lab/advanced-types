@@ -96,4 +96,10 @@ class TimeDurationSpec extends ObjectBehavior
         $this->beConstructedWith('123');
         $this->equals($duration)->shouldReturn(false);
     }
+
+    function it_return_scalar_as_int()
+    {
+        $this->beConstructedWith(123);
+        $this->toScalar()->shouldReturn(123);
+    }
 }

@@ -48,4 +48,11 @@ class UrlSpec extends ObjectBehavior
         $this->beConstructedWith($this->url);
         $this->__toString()->shouldReturn($this->url);
     }
+
+
+    function it_return_scalar_as_string()
+    {
+        $this->beConstructedWith($this->url);
+        $this->toScalar()->shouldReturn($this->url);
+    }
 }
