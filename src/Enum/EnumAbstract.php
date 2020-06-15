@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\Enum;
 
-use JeckelLab\AdvancedTypes\ValueObject\ValueObject;
+use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 use JsonSerializable;
 use MabeEnum\Enum;
 
@@ -17,6 +17,8 @@ use MabeEnum\Enum;
  * Class EnumAbstract
  * @package JeckelLab\AdvancedTypes\Enum
  * @psalm-immutable
+ * @template T2
+ * @implements ValueObject<T2>
  */
 abstract class EnumAbstract extends Enum implements JsonSerializable, ValueObject
 {

@@ -72,4 +72,10 @@ class TimeDurationTest extends TestCase
         $this->assertEquals(50, $diff->getValue());
         $this->assertEquals(250, $newDuration->getValue());
     }
+
+    public function testToScalar(): void
+    {
+        $duration = new TimeDuration(200);
+        $this->assertSame(200, $duration->toScalar());
+    }
 }

@@ -48,4 +48,10 @@ class EmailSpec extends ObjectBehavior
         $this->beConstructedWith($this->email);
         $this->__toString()->shouldReturn($this->email);
     }
+
+    function it_return_scalar_as_string()
+    {
+        $this->beConstructedWith($this->email);
+        $this->toScalar()->shouldReturn($this->email);
+    }
 }

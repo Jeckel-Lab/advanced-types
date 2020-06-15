@@ -10,11 +10,13 @@ declare(strict_types=1);
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
 use Assert\Assert;
+use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 
 /**
  * Class Email
  * @package JeckelLab\AdvancedTypes\emailObject
  * @psalm-immutable
+ * @implements ValueObject<string>
  */
 class Email implements ValueObject, Equality
 {
@@ -46,6 +48,15 @@ class Email implements ValueObject, Equality
     public function equals($object): bool
     {
         return $object->email === $this->email;
+    }
+
+    /**
+     * @paslm-return string
+     * @return string
+     */
+    public function toScalar()
+    {
+        return $this->email;
     }
 
     /**

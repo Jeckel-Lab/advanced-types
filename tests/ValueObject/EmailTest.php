@@ -45,4 +45,11 @@ class EmailTest extends TestCase
         $this->assertEquals($emailString, $email->getEmail());
         $this->assertEquals($emailString, $email->__toString());
     }
+
+    public function testToScalar(): void
+    {
+        $emailString = 'foo@bar.com';
+        $email = new Email($emailString);
+        $this->assertSame($emailString, $email->toScalar());
+    }
 }

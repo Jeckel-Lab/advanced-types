@@ -11,11 +11,13 @@ namespace JeckelLab\AdvancedTypes\ValueObject;
 
 use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 use Assert\Assert;
+use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 use RuntimeException;
 
 /**
  * Class TimeDuration
  * @psalm-immutable
+ * @implements ValueObject<int>
  */
 class TimeDuration implements ValueObject, Equality
 {
@@ -123,6 +125,15 @@ class TimeDuration implements ValueObject, Equality
     public function equals($object): bool
     {
         return $object->duration === $this->duration;
+    }
+
+    /**
+     * @paslm-return int
+     * @return int
+     */
+    public function toScalar()
+    {
+        return $this->duration;
     }
 
     /**
