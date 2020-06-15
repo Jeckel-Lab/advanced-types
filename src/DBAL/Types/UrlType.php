@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\DBAL\Types;
 
-use Assert\InvalidArgumentException;
+use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\AdvancedTypes\ValueObject\Url;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;

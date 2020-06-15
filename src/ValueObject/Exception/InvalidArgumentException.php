@@ -13,7 +13,7 @@ namespace JeckelLab\AdvancedTypes\ValueObject\Exception;
  * Class InvalidArgumentException
  * @package ValueObject\Exception
  */
-class InvalidArgumentException extends \InvalidArgumentException implements ValueObjectExceptionInterface
+class InvalidArgumentException extends \InvalidArgumentException implements ValueObjectException
 {
 
 }

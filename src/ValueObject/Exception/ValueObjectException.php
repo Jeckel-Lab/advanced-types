@@ -7,13 +7,13 @@
 
 namespace JeckelLab\AdvancedTypes\ValueObject\Exception;
 
-use Throwable;
+use JeckelLab\Contract\Domain\Exception\DomainException;
 
 /**
  * Interface ValueObjectExceptionInterface
  * @package ValueObject\Exception
  */
-interface ValueObjectExceptionInterface extends Throwable
+interface ValueObjectException extends DomainException
 {
 
 }
