@@ -10,6 +10,9 @@ declare(strict_types=1);
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
 use Assert\Assert;
+use Assert\AssertionFailedException;
+use JeckelLab\Contract\Domain\Equality;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 
 /**
@@ -29,7 +32,11 @@ class Url implements ValueObject, Equality
      */
     public function __construct(string $url)
     {
-        Assert::that($url)->url();
+        try {
+            Assert::that($url)->url();
+        } catch (AssertionFailedException $e) {
+            throw new InvalidArgumentException($e->getMessage(), (int) $e->getCode(), $e);
+        }
         $this->url = $url;
     }
 

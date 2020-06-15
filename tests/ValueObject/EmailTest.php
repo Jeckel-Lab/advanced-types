@@ -7,8 +7,8 @@
 
 namespace Tests\JeckelLab\AdvancedTypes\ValueObject;
 
-use Assert\InvalidArgumentException;
 use JeckelLab\AdvancedTypes\ValueObject\Email;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**

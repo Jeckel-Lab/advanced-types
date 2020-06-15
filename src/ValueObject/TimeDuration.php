@@ -9,8 +9,10 @@ declare(strict_types=1);
 
 namespace JeckelLab\AdvancedTypes\ValueObject;
 
-use JeckelLab\AdvancedTypes\ValueObject\Exception\InvalidArgumentException;
+use Assert\AssertionFailedException;
 use Assert\Assert;
+use JeckelLab\Contract\Domain\Equality;
+use JeckelLab\Contract\Domain\ValueObject\Exception\InvalidArgumentException;
 use JeckelLab\Contract\Domain\ValueObject\ValueObject;
 use RuntimeException;
 
@@ -32,7 +34,11 @@ class TimeDuration implements ValueObject, Equality
      */
     public function __construct(int $duration = 0)
     {
-        Assert::that($duration)->greaterOrEqualThan(0);
+        try {
+            Assert::that($duration)->greaterOrEqualThan(0);
+        } catch (AssertionFailedException $e) {
+            throw new InvalidArgumentException($e->getMessage(), (int) $e->getCode(), $e);
+        }
         $this->duration = $duration;
     }
 
