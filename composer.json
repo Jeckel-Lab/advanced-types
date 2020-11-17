@@ -39,7 +39,7 @@
         "vimeo/psalm": "^3.8",
         "symfony/form": "^5.0",
         "phpspec/phpspec": "^6.1",
-        "friends-of-phpspec/phpspec-code-coverage": "^4.3",
+        "friends-of-phpspec/phpspec-code-coverage": "^5.0",
         "fzaninotto/faker": "^1.9",
         "d0x2f/clover-merge": "^1.0"
     },
