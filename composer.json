@@ -36,7 +36,7 @@
         "symfony/http-kernel": "^4 || ^5",
         "phpro/grumphp": "^0.19.0",
         "phpunit/phpunit": "^8.5",
-        "vimeo/psalm": "^3.8",
+        "vimeo/psalm": "^4.2",
         "symfony/form": "^5.0",
         "phpspec/phpspec": "^6.1",
         "friends-of-phpspec/phpspec-code-coverage": "^4.3",
