@@ -25,7 +25,6 @@ See documentation of [marc-mabe/php-enum](https://github.com/marc-mabe/php-enum)
 # Value Object
 
 - Color
-- DateTimePeriod
 - Email
 - TimeDuration
 - Url
